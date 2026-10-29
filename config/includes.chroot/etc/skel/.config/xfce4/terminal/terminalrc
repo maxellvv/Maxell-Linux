@@ -1,0 +1,8 @@
+[Configuration]
+FontName=Fira Code 11
+ColorForeground=#d8dee9
+ColorBackground=#1b1f27
+ColorCursor=#88c0d0
+ColorPalette=#3b4252;#bf616a;#a3be8c;#ebcb8b;#81a1c1;#b48ead;#88c0d0;#e5e9f0;#4c566a;#bf616a;#a3be8c;#ebcb8b;#81a1c1;#b48ead;#8fbcbb;#eceff4
+ScrollingLines=5000
+MiscAlwaysShowTabs=FALSE
