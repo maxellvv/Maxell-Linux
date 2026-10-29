@@ -1,0 +1,8 @@
+#!/bin/sh
+# Run neofetch when a bash terminal opens
+echo '' >> /etc/bash.bashrc
+echo 'if [ -n "$PS1" ] && command -v neofetch >/dev/null; then neofetch; fi' >> /etc/bash.bashrc
+
+# Live session user (change the password before sharing the ISO)
+useradd -m -s /bin/bash maxell 2>/dev/null
+echo "maxell:maxell" | chpasswd
