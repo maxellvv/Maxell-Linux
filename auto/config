@@ -1,0 +1,11 @@
+#!/bin/sh
+lb config noauto \
+  --distribution bookworm \
+  --archive-areas "main contrib non-free non-free-firmware" \
+  --architectures amd64 \
+  --binary-images iso-hybrid \
+  --debian-installer live \
+  --iso-application "Maxell Linux" \
+  --iso-publisher "Maxell Linux" \
+  --iso-volume "MAXELL" \
+  "${@}"
