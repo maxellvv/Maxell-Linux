@@ -1,0 +1,32 @@
+name: Build Maxell Linux ISO
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: debian:bookworm
+      options: --privileged
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install live-build
+        run: |
+          apt-get update
+          apt-get install -y live-build
+
+      - name: Build ISO
+        run: |
+          lb clean --purge || true
+          sh auto/config
+          sh auto/build
+
+      - name: Upload ISO
+        uses: actions/upload-artifact@v4
+        with:
+          name: maxell-linux-iso
+          path: "*.iso"
